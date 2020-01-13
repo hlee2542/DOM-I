@@ -75,3 +75,19 @@ let bottomContentText = document.querySelectorAll('.bottom-content .text-content
 bottomContentText[0].textContent = siteContent['main-content']['services-content'];
 bottomContentText[1].textContent = siteContent['main-content']['product-content'];
 bottomContentText[2].textContent = siteContent['main-content']['vision-content'];
+
+let contactH4 = document.querySelector('.contact h4');
+contactH4.textContent = siteContent.contact['contact-h4'];
+
+let contactP = document.querySelectorAll('.contact p');
+let br = document.createElement('br');
+contactP[0].append(br);
+let street = siteContent.contact.address.substr(0, 18);
+contactP[0].prepend(street);
+let city = siteContent.contact.address.substr(19);
+contactP[0].append(city);
+contactP[1].textContent = siteContent.contact.phone;
+contactP[2].textContent = siteContent.contact.email;
+
+let copyright = document.querySelector('footer p');
+copyright.textContent = siteContent.footer.copyright;

@@ -44,7 +44,20 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 let links = document.querySelectorAll('nav a');
 links.forEach((link, index) => {
   link.textContent = siteContent.nav[`nav-item-${index + 1}`];
+  link.style.color = 'green';
 });
+
+let nav = document.querySelector('nav');
+let newItemOne = document.createElement('a');
+newItemOne.href = '#';
+newItemOne.textContent = 'Login';
+newItemOne.style.color = 'green';
+nav.append(newItemOne);
+let newItemTwo = document.createElement('a');
+newItemTwo.href = '#';
+newItemTwo.textContent = 'Partners';
+newItemTwo.style.color = 'green';
+nav.append(newItemTwo);
 
 let ctaH1 = document.querySelector('.cta-text h1');
 ctaH1.textContent = siteContent.cta.h1;

@@ -60,7 +60,12 @@ newItemTwo.style.color = 'green';
 nav.append(newItemTwo);
 
 let ctaH1 = document.querySelector('.cta-text h1');
-ctaH1.textContent = siteContent.cta.h1;
+let noSpaces = siteContent.cta.h1.split(' ');
+noSpaces.forEach((word) => {
+  ctaH1.append(word);
+  let br = document.createElement('br');
+  ctaH1.append(br);
+});
 
 let ctaButton = document.querySelector('.cta-text button');
 ctaButton.textContent = siteContent.cta.button;
